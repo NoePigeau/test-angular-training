@@ -1,0 +1,18 @@
+<div >
+    <h1 [style.text-align]="textAlign" [@headerAnimation]="headerState" *ngIf="headerState">{{ header }}</h1>
+
+    <div *ngIf="title; then unTitre; else pasTitre">
+        <h1>ne parais jamais </h1>
+    </div> 
+    <button class="waves-effect waves-light btn" (click)="animateHeader()"> Animer ! </button>
+
+
+    <ng-template #unTitre>
+        <h2 [style.text-align]="textAlign"> {{ title }} </h2>
+    </ng-template>
+
+    <ng-template #pasTitre>
+        <h2 [style.text-align]="textAlign"> il n'y a pas de titre ! </h2>
+    </ng-template> 
+    
+</div>
